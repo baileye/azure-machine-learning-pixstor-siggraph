@@ -50,7 +50,7 @@ def azure_ocr(filename):
     """
 
     # Change this to your subscription key
-    subscription_key = "<INSERT API KEY"
+    subscription_key = "df5d088dd5214fae8deb20c7c7fbbcfa"
     assert subscription_key
 
     # Change this to your API endpoint - it will change based on the region you select
@@ -72,6 +72,6 @@ def azure_ocr(filename):
         count = 0
 
         for line in analysis['regions'][0]['lines']:
-        for word in line['words']:
-            lines.append(word['text'])
+            for word in line['words']:
+                lines.append(word['text'])
         return lines
