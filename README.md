@@ -147,7 +147,7 @@ Azure object detection is an extension of the Custom Vision service as described
 
 ## Azure Optical Character Recognition (OCR)
 
-Useful for credit scenes, comics, and text in images! Azure OCR uses the Computer Vision API 2.0, this means you can use the same key and 
+Useful for credit scenes, comics, and text in images! Azure OCR uses the Computer Vision API 2.0, this means you can use the same key as the computer vision service key above.
 
 - Copy the [azureOcr.py](azureOcr.py) to the plugins directory for PixStor located at:
     - `/opt/arcapix/usr/share/apsearch/plugins`
@@ -158,7 +158,7 @@ Useful for credit scenes, comics, and text in images! Azure OCR uses the Compute
     - `su - search -c 'python /opt/arcapix/search/middleware/src/arcapix/search/tools/finder.py remove /mmfs1/data --exclude=".ctdb/*,.policytmp/*,proxies/*,logs/*,apfs/*" '`
     - `su - search -c 'python /opt/arcapix/search/middleware/src/arcapix/search/tools/finder.py add /mmfs1/data'`
     - In normal usage, as content is added to PixStor the plugins are executed automatically
-- Go to your PixStor GUI and search for something you expect to be in one of your images :)
+- Go to your PixStor GUI and search for some text you expect to be in one of your images :)
     - #TODO: Add gif of pixStor gui search, show metadata added from computer vision
 
 
