@@ -26,7 +26,8 @@ This repository will cover how to set up a plugin for [PixStor](https://www.pixi
   - Plugin that uses the Azure [Custom Vision Service](https://azure.microsoft.com/en-gb/services/cognitive-services/custom-vision-service/). This plugin has a trained model that classifies each image based on the custom trained model. This service is designed to help you answer a specific question about your images, for example "is this a photo of a a wood texture?", or "is this wood grain or chipboard?"
 - [azureobjectdetection.py](azureobjectdetection.py)
    - [Object Detection](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/python-tutorial-od)
-
+- [azureOcr.py](azureOcr.py)
+    - Plugin that uses the Azure [Computer Vision API](https://azure.microsoft.com/en-gb/services/cognitive-services/computer-vision/) to detect text in images. The text is added to the metadat for the image enabling that text to be searchable in the PixStor UI.
 
 # Instructions
 
