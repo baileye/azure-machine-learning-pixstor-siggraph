@@ -43,7 +43,7 @@ If you don't have PixStor, you can still follow the steps below and test the Azu
 This plugin adds metadata to your images based on the standard Azure Computer Vision service. This service will detect information, faces, landmarks, and other general items in your images.
 
 - Set up the vision API in your subscription. You can [start a trial and see your API keys here](https://azure.microsoft.com/en-us/try/cognitive-services/my-apis/). If you have previously set up a trial, you will have to create a vision key in the [Azure Portal](https://portal.azure.com/). Click on ' Create a resource' and search for 'Computer Vision'. Follow the steps in the portal to set up the Computer Vision service.
-- Edit the [azurevision.py](azurevision.py) file and change the 'azure_api_key' variable to be your key. Change the variable 'azure_endpoint' to your API endpoint
+- Edit the [azurevision.py](azurevision.py) file and change the 'subscription_key' variable to be your key. Change the variable 'vision_base_url' to your API endpoint
     - To find your key and API endpoint in the portal click on the resource group you used when creating your Computer Vision service. Then click on the Computer Vision service. If the 'Quick Start' tab hasn't opened click on the sidebar to show it. That page will have your API key and the API endpoint you need.
 
 ![Azure Portal](images/portal_create_computer_vision.gif "Azure Portal, register a new Computer Vision service")
@@ -147,7 +147,19 @@ Azure object detection is an extension of the Custom Vision service as described
 
 ## Azure Optical Character Recognition (OCR)
 
-Useful for credit scenes, comics, and text in images!
+Useful for credit scenes, comics, and text in images! Azure OCR uses the Computer Vision API 2.0, this means you can use the same key and 
+
+- Copy the [azureOcr.py](azureOcr.py) to the plugins directory for PixStor located at:
+    - `/opt/arcapix/usr/share/apsearch/plugins`
+- Ensure you have the 'requests' module for Python installed in your PixStor VM
+    - ssh into your VM
+    - pip install requests
+- When testing, you will want to remove the data from PixStor search and re-ingest, with the following commands:
+    - `su - search -c 'python /opt/arcapix/search/middleware/src/arcapix/search/tools/finder.py remove /mmfs1/data --exclude=".ctdb/*,.policytmp/*,proxies/*,logs/*,apfs/*" '`
+    - `su - search -c 'python /opt/arcapix/search/middleware/src/arcapix/search/tools/finder.py add /mmfs1/data'`
+    - In normal usage, as content is added to PixStor the plugins are executed automatically
+- Go to your PixStor GUI and search for something you expect to be in one of your images :)
+    - #TODO: Add gif of pixStor gui search, show metadata added from computer vision
 
 
 # Background
