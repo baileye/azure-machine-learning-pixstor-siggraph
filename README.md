@@ -20,10 +20,11 @@ You will need an Azure account to use the Cognitive Services APIs. Set up an [Az
 
 You will need a deployment of PixStor. If you don't have an existing deployment, please contact [PixitMedia](http://www.pixitmedia.com/contact-us/) and they will support you setting up a Virtual Machine with PixStor.
 
-If you don't have PixStor, you can still follow the steps below and test the Azure Cognitive Services, via your own code, service, or in your browser via the [API Console and Explorer](https://westus.dev.cognitive.microsoft.com/docs/services/)
-
+If you don't have PixStor, you can still follow the steps below and test the Azure Cognitive Services, via your own code, service, or in your browser via the [API Console and Explorer](https://westus.dev.cognitive.microsoft.com/docs/services/) (ensure you are using the same region your API key is valid for).
 
 ## Azure Computer Vision
+
+This plugin adds metadata to your images based on the standard Azure Computer Vision service. This service will detect information, faces, landmarks, and other general items in your images.
 
 - Set up the vision API in your subscription. You can [start a trial and see your API keys here](https://azure.microsoft.com/en-us/try/cognitive-services/my-apis/). If you have previously set up a trial, you will have to create a vision key in the [Azure Portal](https://portal.azure.com/). Click on ' Create a resource' and search for 'Computer Vision'. Follow the steps in the portal to set up the Computer Vision service.
 - Edit the [azurevision.py](azurevision.py) file and change the 'azure_api_key' variable to be your key. Change the variable 'azure_endpoint' to your API endpoint
@@ -45,6 +46,8 @@ If you don't have PixStor, you can still follow the steps below and test the Azu
 
 
 ## Azure Custom Vision Service
+
+The custom vision service enables you to easily to add more intelligence to the standard computer vision model. 
 
 We are going to build a classification model. This model will determine which class (or category if you prefer), each image belongs to. The classifer only return a result from the classes you pre-create and train. The documenation below will show you how to create a classification model and how to train it with your own images.
 
@@ -120,7 +123,7 @@ We are going to build a classification model. This model will determine which cl
     - su - search -c 'python /opt/arcapix/search/middleware/src/arcapix/search/tools/finder.py add /mmfs1/data'
     - In normal usage, as content is added to PixStor the plugins are executed automatically
 - Go to your PixStor GUI and search for something you expect to be in one of your images :)
-    - #TODO: Add gif of pixStor gui search, show metadata added from custom vision
+    - TODO: Add gif of pixStor gui search, show metadata added from custom vision
 
 
 ## Azure Object Detection
