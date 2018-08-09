@@ -9,14 +9,14 @@ This repository will cover how to set up a plugin for [PixStor](https://www.pixi
 - [Instructions](#instructions)
   * [Azure Computer Vision](#azure-computer-vision)
   * [Azure Custom Vision Service](#azure-custom-vision-service)
-  * [Deployment Steps](#deployment-steps)
-    + [Create Project](#create-project)
-    + [Test the API](#test-the-api)
-    + [Retrain the API](#retrain-the-api)
+    + [Deployment Steps](#deployment-steps)
+      - [Create Project](#create-project)
+      - [Test the API](#test-the-api)
+      - [Retrain the API](#retrain-the-api)
     + [PixStor Plugin](#pixstor-plugin)
   * [Azure Object Detection](#azure-object-detection)
   * [Azure Optical Character Recognition (OCR)](#azure-optical-character-recognition--ocr-)
-  * [Background](#background)
+- [Background](#background)
 
 # Repo contents
 
@@ -70,9 +70,9 @@ We are going to build a classification model. This model will determine which cl
 **One example is:** given a set of images of films (Paddington 2, Wonderwoman, Star Wars: Last jedi ...) can the model predict the correct film given a new image.
 
 
-## Deployment Steps
+### Deployment Steps
 
-### Create Project
+#### Create Project
 - Visit [https://www.customvision.ai/](https://www.customvision.ai/) and sign in with your Azure credentials
 
 ![Custom Vision Sign in Website](images/customvision.JPG "Custom Vision Sign in Website")
@@ -104,12 +104,12 @@ We are going to build a classification model. This model will determine which cl
 - View the first training results. For only a few images this is good and we will see this improve overtime
 ![First Training Results](images/firsttrainresults.JPG "First Training Results")
 
-### Test the API
+#### Test the API
 - Lets now test the trained API with a new image. Choose Quick test and upload an image to your API via the UI
 ![Quick Test](images/quicktest.JPG "Quick Test")
 ![Test Image Results](images/testimageresults.JPG "Test Image Results")
 
-### Retrain the API
+#### Retrain the API
 - Now you have tested an image you can feed this information back into the model so the model is always improving and updating. In the **Predictions** tab you will now see the images you submitted to your model
 ![Predictions Tab](images/predictions.JPG "Predicitions Tab")
 - Select an image and confirm the correct tag for the image
@@ -149,7 +149,8 @@ Azure object detection is an extension of the Custom Vision service as described
 
 Useful for credit scenes, comics, and text in images!
 
-## Background
+
+# Background
 
 [PixStor](https://www.pixitmedia.com/pixstor/) is a high performance, highly scalable, enterprise-class storage solution specifically designed for Media & Entertainment workflows. PixStor combines flash, disk, tape and cloud storage with affordable, high performance Ethernet into a unified system that’s higher performing, limitless in scale and lower cost than traditional legacy solutions. Data moves seamlessly through many tiers of storage – from fast flash to cost-effective, high capacity object storage, all the way out to the cloud – depending on how frequently it needs to be accessed. This allows media organizations to accelerate high resolution workflows and store valuable assets more safely and economically.
 
