@@ -7,16 +7,12 @@ from arcapix.search.metadata.utils import load_image
 
 logger = logging.getLogger(__name__)
 
-# FOR TESTING ONLY!
-logger.setLevel(logging.INFO)
-
 class AzureOcrPlugin(Plugin):
 
     def namespace(self):
         return 'image'
         
     def handles(self, ext=None, mimetype=None):
-        #logger.info('azure computer vision')
         return mimetype and mimetype.startswith('image/')
         
     def schema(self):
@@ -54,7 +50,7 @@ def azure_ocr(filename):
     """
 
     # Change this to your subscription key
-    subscription_key = "<INSERT API KEY HERE"
+    subscription_key = "<INSERT API KEY"
     assert subscription_key
 
     # Change this to your API endpoint - it will change based on the region you select
@@ -72,12 +68,10 @@ def azure_ocr(filename):
         response.raise_for_status()
         analysis = response.json()
         
-        image_lines = analysis["regions"]["lines"]
-        
         lines = list()
         count = 0
 
-        for line in image_lines:
-            for word in line['words']:
-                lines.append(word['text'])
+        for line in analysis['regions'][0]['lines']:
+        for word in line['words']:
+            lines.append(word['text'])
         return lines
