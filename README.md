@@ -128,9 +128,11 @@ We are going to build a classification model. This model will determine which cl
 
 ## Azure Object Detection
 
+Azure object detection is an extension of the Custom Vision service as described above. The key difference in this case is instead of supplying only images with tags to the training set, images with objects and a bounding box for an object are supplied. In this way the machine learning model can learn to identify specific objects in your images. The service will return the object name along with the associated bounding box for that object. This enables you to not only identify that an object is in your image, but specifically where in the image.
+
 ## Azure Optical Character Recognition (OCR)
 
-
+Useful for credit scenes, comics, and text in images!
 
 ## Background
 
