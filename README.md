@@ -16,14 +16,26 @@ This repository will cover how to set up a plugin for [PixStor](https://www.pixi
 
 The instructions are split into using the standard Azure Vision API, the Custom Vision service for classification, and the Custom Vision service for object detection. You will need an Azure account to make use of Microsoft Cognitive Services.
 
+You will need an Azure account to use the Cognitive Services APIs. Set up an [Azure account with free credit](https://azure.microsoft.com/en-us/free/) to try this out.
+
+You will need a deployment of PixStor. If you don't have an existing deployment, please contact [PixitMedia](http://www.pixitmedia.com/contact-us/) and they will support you setting up a Virtual Machine with PixStor.
+
+If you don't have PixStor, you can still follow the steps below and test the Azure Cognitive Services, via your own code, service, or in your browser via the [API Console and Explorer](https://westus.dev.cognitive.microsoft.com/docs/services/)
+
 ## Azure Vision API
 
 - Set up the vision API in your subscription. You can [start a trial and see your API keys here](https://azure.microsoft.com/en-us/try/cognitive-services/my-apis/). If you have previously set up a trial, you will have to create a vision key in the [Azure Portal](https://portal.azure.com/). Click on ' Create a resource' and search for 'Computer Vision'. Follow the steps in the portal to set up the Computer Vision service.
 - Edit the [azurevision.py](azurevision.py) file and change the 'azure_api_key' variable to be your key. Change the variable 'azure_endpoint' to your API endpoint
     - To find your key and API endpoint in the portal click on the resource group you used when creating your Computer Vision service. Then click on the Computer Vision service. If the 'Quick Start' tab hasn't opened click on the sidebar to show it. That page will have your API key and the API endpoint you need.
 
-![Azure Portal](images/portal_create_computer_vision.gif)
-- Copy the [azurevision.py](azurevision.py)
+![Azure Portal](images/portal_create_computer_vision.gif "Azure Portal, register a new Computer Vision service")
+
+- Copy the [azurevision.py](azurevision.py) to the plugins directory for PixStor located at:
+    - /opt/arcapix/usr/share/apsearch/plugins
+- When testing, you will want to remove the data from PixStor search and re-ingest, with the following commands:
+    - su - search -c 'python /opt/arcapix/search/middleware/src/arcapix/search/tools/finder.py remove /mmfs1/data --exclude=".ctdb/*,.policytmp/*,proxies/*,logs/*,apfs/*" '
+    - su - search -c 'python /opt/arcapix/search/middleware/src/arcapix/search/tools/finder.py add /mmfs1/data'
+    - In normal usage, as content is added to PixStor the plugins are executed automatically
 
 ## Azure Custom Vision Service
 
