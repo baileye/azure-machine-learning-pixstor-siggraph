@@ -33,13 +33,13 @@ This plugin adds metadata to your images based on the standard Azure Computer Vi
 ![Azure Portal](images/portal_create_computer_vision.gif "Azure Portal, register a new Computer Vision service")
 
 - Copy the [azurevision.py](azurevision.py) to the plugins directory for PixStor located at:
-    - /opt/arcapix/usr/share/apsearch/plugins
+    - `/opt/arcapix/usr/share/apsearch/plugins`
 - Ensure you have the 'requests' module for Python installed in your PixStor VM
     - ssh into your VM
     - pip install requests
 - When testing, you will want to remove the data from PixStor search and re-ingest, with the following commands:
-    - su - search -c 'python /opt/arcapix/search/middleware/src/arcapix/search/tools/finder.py remove /mmfs1/data --exclude=".ctdb/*,.policytmp/*,proxies/*,logs/*,apfs/*" '
-    - su - search -c 'python /opt/arcapix/search/middleware/src/arcapix/search/tools/finder.py add /mmfs1/data'
+    - `su - search -c 'python /opt/arcapix/search/middleware/src/arcapix/search/tools/finder.py remove /mmfs1/data --exclude=".ctdb/*,.policytmp/*,proxies/*,logs/*,apfs/*" '`
+    - `su - search -c 'python /opt/arcapix/search/middleware/src/arcapix/search/tools/finder.py add /mmfs1/data'`
     - In normal usage, as content is added to PixStor the plugins are executed automatically
 - Go to your PixStor GUI and search for something you expect to be in one of your images :)
     - #TODO: Add gif of pixStor gui search, show metadata added from computer vision
@@ -114,13 +114,13 @@ We are going to build a classification model. This model will determine which cl
 ![Azure Custom Vision Keys](images/customvisionkeys.gif "Azure Custom Vision Keys")
 
 - Copy the [azurecustomvision.py](azurecustomvision.py) to the plugins directory for PixStor located at:
-    - /opt/arcapix/usr/share/apsearch/plugins
+    - `/opt/arcapix/usr/share/apsearch/plugins`
 - Install the Azure Cognitive services Python SDK in your PixStor VM
     - ssh into your VM
-    - pip install azure-cognitiveservices-vision-customvision
+    - `pip install azure-cognitiveservices-vision-customvision`
 - When testing, you will want to remove the data from PixStor search and re-ingest, with the following commands:
-    - su - search -c 'python /opt/arcapix/search/middleware/src/arcapix/search/tools/finder.py remove /mmfs1/data --exclude=".ctdb/*,.policytmp/*,proxies/*,logs/*,apfs/*" '
-    - su - search -c 'python /opt/arcapix/search/middleware/src/arcapix/search/tools/finder.py add /mmfs1/data'
+    - `su - search -c 'python /opt/arcapix/search/middleware/src/arcapix/search/tools/finder.py remove /mmfs1/data --exclude=".ctdb/*,.policytmp/*,proxies/*,logs/*,apfs/*" '`
+    - `su - search -c 'python /opt/arcapix/search/middleware/src/arcapix/search/tools/finder.py add /mmfs1/data'`
     - In normal usage, as content is added to PixStor the plugins are executed automatically
 - Go to your PixStor GUI and search for something you expect to be in one of your images :)
     - TODO: Add gif of pixStor gui search, show metadata added from custom vision
