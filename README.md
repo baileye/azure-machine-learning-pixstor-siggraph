@@ -27,7 +27,7 @@ This repository will cover how to set up a plugin for [PixStor](https://www.pixi
 - [azureobjectdetection.py](azureobjectdetection.py)
    - [Object Detection](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/python-tutorial-od)
 - [azureOcr.py](azureOcr.py)
-    - Plugin that uses the Azure [Computer Vision API](https://azure.microsoft.com/en-gb/services/cognitive-services/computer-vision/) to detect text in images. The text is added to the metadat for the image enabling that text to be searchable in the PixStor UI.
+    - Plugin that uses the Azure [Computer Vision API](https://azure.microsoft.com/en-gb/services/cognitive-services/computer-vision/) to detect text in images. The text is added to the metadata for the image enabling that text to be searchable in the PixStor UI.
 
 # Instructions
 
@@ -59,7 +59,6 @@ This plugin adds metadata to your images based on the standard Azure Computer Vi
     - `su - search -c 'python /opt/arcapix/search/middleware/src/arcapix/search/tools/finder.py add /mmfs1/data'`
     - In normal usage, as content is added to PixStor the plugins are executed automatically
 - Go to your PixStor GUI and search for something you expect to be in one of your images :)
-    - #TODO: Add gif of pixStor gui search, show metadata added from computer vision
 
 
 ## Azure Custom Vision Service
@@ -140,7 +139,6 @@ We are going to build a classification model. This model will determine which cl
     - `su - search -c 'python /opt/arcapix/search/middleware/src/arcapix/search/tools/finder.py add /mmfs1/data'`
     - In normal usage, as content is added to PixStor the plugins are executed automatically
 - Go to your PixStor GUI and search for something you expect to be in one of your images :)
-    - TODO: Add gif of pixStor gui search, show metadata added from custom vision
 
 ## Azure Object Detection
 
@@ -160,7 +158,6 @@ Useful for credit scenes, comics, and text in images! Azure OCR uses the Compute
     - `su - search -c 'python /opt/arcapix/search/middleware/src/arcapix/search/tools/finder.py add /mmfs1/data'`
     - In normal usage, as content is added to PixStor the plugins are executed automatically
 - Go to your PixStor GUI and search for some text you expect to be in one of your images :)
-    - #TODO: Add gif of pixStor gui search, show metadata added from computer vision
 
 
 # Background
