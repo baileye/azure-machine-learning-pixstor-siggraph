@@ -50,7 +50,7 @@ def azure_ocr(filename):
     """
 
     # Change this to your subscription key
-    subscription_key = "df5d088dd5214fae8deb20c7c7fbbcfa"
+    subscription_key = "<INSERT KEY>"
     assert subscription_key
 
     # Change this to your API endpoint - it will change based on the region you select
