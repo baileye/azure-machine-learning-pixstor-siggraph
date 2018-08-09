@@ -22,7 +22,7 @@ You will need a deployment of PixStor. If you don't have an existing deployment,
 
 If you don't have PixStor, you can still follow the steps below and test the Azure Cognitive Services, via your own code, service, or in your browser via the [API Console and Explorer](https://westus.dev.cognitive.microsoft.com/docs/services/) (ensure you are using the same region your API key is valid for).
 
-## Azure Computer Vision
+## Azure Computer Vision
 
 This plugin adds metadata to your images based on the standard Azure Computer Vision service. This service will detect information, faces, landmarks, and other general items in your images.
 
@@ -125,8 +125,7 @@ We are going to build a classification model. This model will determine which cl
 - Go to your PixStor GUI and search for something you expect to be in one of your images :)
     - TODO: Add gif of pixStor gui search, show metadata added from custom vision
 
-
-## Azure Object Detection
+## Azure Object Detection
 
 Azure object detection is an extension of the Custom Vision service as described above. The key difference in this case is instead of supplying only images with tags to the training set, images with objects and a bounding box for an object are supplied. In this way the machine learning model can learn to identify specific objects in your images. The service will return the object name along with the associated bounding box for that object. This enables you to not only identify that an object is in your image, but specifically where in the image.
 
