@@ -2,6 +2,22 @@
 
 This repository will cover how to set up a plugin for [PixStor](https://www.pixitmedia.com/pixstor/) that uses [Microsoft Cognitive Services](https://azure.microsoft.com/en-gb/services/cognitive-services/) to add information about your image archive. The code and contents here are intended as a sample and proof-of-concept only.
 
+# Table of Contents
+
+- [Azure Cognitive Services with PixStor](#azure-cognitive-services-with-pixstor)
+- [Repo contents](#repo-contents)
+- [Instructions](#instructions)
+  * [Azure Computer Vision](#azure-computer-vision)
+  * [Azure Custom Vision Service](#azure-custom-vision-service)
+  * [Deployment Steps](#deployment-steps)
+    + [Create Project](#create-project)
+    + [Test the API](#test-the-api)
+    + [Retrain the API](#retrain-the-api)
+    + [PixStor Plugin](#pixstor-plugin)
+  * [Azure Object Detection](#azure-object-detection)
+  * [Azure Optical Character Recognition (OCR)](#azure-optical-character-recognition--ocr-)
+  * [Background](#background)
+
 # Repo contents
 
 - [azurevision.py](azurevision.py)
