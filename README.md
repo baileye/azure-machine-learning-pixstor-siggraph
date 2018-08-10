@@ -1,43 +1,45 @@
 # Azure Cognitive Services with PixStor
 
-This repository will cover how to set up a plugin for [PixStor](https://www.pixitmedia.com/pixstor/) that uses [Microsoft Cognitive Services](https://azure.microsoft.com/en-gb/services/cognitive-services/) to add information about your image archive. The code and contents here are intended as a sample and proof-of-concept only.
+This repository will cover how to set up a plugin for [PixStor](https://www.pixitmedia.com/pixstor/) that uses [Azure Cognitive Services](https://azure.microsoft.com/en-gb/services/cognitive-services/) to add intelligent information to your image archive. The code and contents here are intended as a sample and proof-of-concept only.
 
 # Table of Contents
 
 - [Azure Cognitive Services with PixStor](#azure-cognitive-services-with-pixstor)
-- [Repo contents](#repo-contents)
+- [Repository Contents](#repo-contents)
 - [Instructions](#instructions)
   * [Azure Computer Vision](#azure-computer-vision)
-  * [Azure Custom Vision Service](#azure-custom-vision-service)
+  * [Azure Custom Vision Service - Classification](#azure-custom-vision-service)
     + [Deployment Steps](#deployment-steps)
       - [Create Project](#create-project)
       - [Test the API](#test-the-api)
-      - [Retrain the API](#retrain-the-api)
+      - [Re-train the API](#retrain-the-api)
     + [PixStor Plugin](#pixstor-plugin)
-  * [Azure Object Detection](#azure-object-detection)
+  * [Azure Custom Vision Service - Object Detection](#azure-object-detection)
   * [Azure Optical Character Recognition (OCR)](#azure-optical-character-recognition--ocr-)
 - [Background](#background)
 
-# Repo contents
+# Repository Contents
 
 - [azurevision.py](azurevision.py)
-   - Plugin that uses the Azure [Computer Vision API](https://azure.microsoft.com/en-gb/services/cognitive-services/computer-vision/) to generate a set of tags for the image. This is a generic service and will work on a wide-array of images but it is not designed for specific classification models or problems. This plugin and API is a great first start to using Machine Learning to add information about your image archive.
+   - Plugin that uses the Azure [Computer Vision API](https://azure.microsoft.com/en-gb/services/cognitive-services/computer-vision/) to generate a set of tags for the image. This is a generic service and will work on a wide-array of images but it is not designed for specific classification models or problems. This plugin and API is a great first start to using Machine Learning to add information about your image to your archive.
 - [azureclassification.py](azureclassification.py)
-  - Plugin that uses the Azure [Custom Vision Service](https://azure.microsoft.com/en-gb/services/cognitive-services/custom-vision-service/). This plugin has a trained model that classifies each image based on the custom trained model. This service is designed to help you answer a specific question about your images, for example "is this a photo of a a wood texture?", or "is this wood grain or chipboard?"
+  - Plugin that uses the Azure [Custom Vision Service](https://azure.microsoft.com/en-gb/services/cognitive-services/custom-vision-service/). This plugin has a trained model that classifies each image based on the custom trained classification model. This service is designed to help you answer a specific question about your images, for example "is this wood grain or chipboard?"
 - [azureobjectdetection.py](azureobjectdetection.py)
-   - [Object Detection](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/python-tutorial-od)
+   - Plugin that uses the [Azure Custom Vision Service](). This plugin has a trained model that detects specific objects in an image  based in a custom trained object detection model. This service is designed to help you identify specific objects within an image, for example "cat", "dog", "duck" etc and there can be one or more in each image
 - [azureOcr.py](azureOcr.py)
     - Plugin that uses the Azure [Computer Vision API](https://azure.microsoft.com/en-gb/services/cognitive-services/computer-vision/) to detect text in images. The text is added to the metadata for the image enabling that text to be searchable in the PixStor UI.
 
 # Instructions
 
-The instructions are split into using the standard Azure Vision API, the Custom Vision service for classification, and the Custom Vision service for object detection. You will need an Azure account to make use of Microsoft Cognitive Services.
+The instructions are split into using the standard Azure Computer Vision API (tags and OCR) and the Custom Vision service for classification and object detection. You will need an Azure account to make use of the Azure Cognitive Services.
 
 You will need an Azure account to use the Cognitive Services APIs. Set up an [Azure account with free credit](https://azure.microsoft.com/en-us/free/) to try this out.
 
 You will need a deployment of PixStor. If you don't have an existing deployment, please contact [PixitMedia](http://www.pixitmedia.com/contact-us/) and they will support you setting up a Virtual Machine with PixStor.
 
-If you don't have PixStor, you can still follow the steps below and test the Azure Cognitive Services, via your own code, service, or in your browser via the [API Console and Explorer](https://westus.dev.cognitive.microsoft.com/docs/services/) (ensure you are using the same region your API key is valid for).
+If you don't have PixStor, you can still follow the steps below and test the Azure Cognitive Services:
+* By running sample code *[See non_plugin_examples folder for python notebook and pure python files]*
+* Or in your browser via the [API Console and Explorer](https://westus.dev.cognitive.microsoft.com/docs/services/) (ensure you are using the same region your API key is valid for).
 
 ## Azure Computer Vision
 
